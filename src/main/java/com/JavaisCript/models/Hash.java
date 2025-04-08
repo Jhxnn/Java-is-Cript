@@ -15,6 +15,7 @@ public class Hash {
 
     private String hash;
 
+    @ManyToOne
     @JoinColumn(referencedColumnName = "id",name = "user_id")
     private User user;
 
