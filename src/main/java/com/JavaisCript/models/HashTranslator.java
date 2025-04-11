@@ -281,4 +281,33 @@ public class HashTranslator {
     public void setzIs(String zIs) {
         this.zIs = zIs;
     }
+
+    public HashTranslator(String aIs, String bIs, String cIs, String dIs, String eIs, String fIs, String gIs, String hIs, String iIs, String jIs, String kIs, String lIs, String mIs, String nIs, String oIs, String pIs, String qIs, String rIs, String sIs, String tIs, String uIs, String vIs, String wIs, String xIs, String yIs, String zIs) {
+        this.aIs = aIs;
+        this.bIs = bIs;
+        this.cIs = cIs;
+        this.dIs = dIs;
+        this.eIs = eIs;
+        this.fIs = fIs;
+        this.gIs = gIs;
+        this.hIs = hIs;
+        this.iIs = iIs;
+        this.jIs = jIs;
+        this.kIs = kIs;
+        this.lIs = lIs;
+        this.mIs = mIs;
+        this.nIs = nIs;
+        this.oIs = oIs;
+        this.pIs = pIs;
+        this.qIs = qIs;
+        this.rIs = rIs;
+        this.sIs = sIs;
+        this.tIs = tIs;
+        this.uIs = uIs;
+        this.vIs = vIs;
+        this.wIs = wIs;
+        this.xIs = xIs;
+        this.yIs = yIs;
+        this.zIs = zIs;
+    }
 }
