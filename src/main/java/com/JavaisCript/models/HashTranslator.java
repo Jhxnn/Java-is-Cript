@@ -13,6 +13,10 @@ public class HashTranslator {
     @Column(name = "id")
     private UUID hashTranslateId;
 
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id",name = "hash_id")
+    private Hash hash;
+
 
     private String aIs;
 
