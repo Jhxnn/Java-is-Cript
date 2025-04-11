@@ -13,10 +13,18 @@ public class HashTranslator {
     @Column(name = "id")
     private UUID hashTranslateId;
 
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "id",name = "hash_id")
-    private Hash hash;
 
+    private String key;
+
+
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     private String aIs;
 
@@ -286,7 +294,7 @@ public class HashTranslator {
         this.zIs = zIs;
     }
 
-    public HashTranslator(String aIs, String bIs, String cIs, String dIs, String eIs, String fIs, String gIs, String hIs, String iIs, String jIs, String kIs, String lIs, String mIs, String nIs, String oIs, String pIs, String qIs, String rIs, String sIs, String tIs, String uIs, String vIs, String wIs, String xIs, String yIs, String zIs) {
+    public HashTranslator(String aIs, String bIs, String cIs, String dIs, String eIs, String fIs, String gIs, String hIs, String iIs, String jIs, String kIs, String lIs, String mIs, String nIs, String oIs, String pIs, String qIs, String rIs, String sIs, String tIs, String uIs, String vIs, String wIs, String xIs, String yIs, String zIs,String key) {
         this.aIs = aIs;
         this.bIs = bIs;
         this.cIs = cIs;
@@ -313,5 +321,6 @@ public class HashTranslator {
         this.xIs = xIs;
         this.yIs = yIs;
         this.zIs = zIs;
+        this.key = key;
     }
 }

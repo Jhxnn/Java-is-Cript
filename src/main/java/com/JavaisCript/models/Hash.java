@@ -16,6 +16,10 @@ public class Hash {
     private String hash;
 
     @ManyToOne
+    @JoinColumn(referencedColumnName = "id",name = "hashTranslator_id")
+    private HashTranslator hashTranslator;
+
+    @ManyToOne
     @JoinColumn(referencedColumnName = "id",name = "user_id")
     private User user;
 
@@ -23,6 +27,13 @@ public class Hash {
 
     private byte[] file;
 
+    public HashTranslator getHashTranslator() {
+        return hashTranslator;
+    }
+
+    public void setHashTranslator(HashTranslator hashTranslator) {
+        this.hashTranslator = hashTranslator;
+    }
 
     public UUID getHashId() {
         return hashId;
