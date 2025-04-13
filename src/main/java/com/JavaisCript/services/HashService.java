@@ -35,6 +35,7 @@ public class HashService {
         hash.setHashTranslator(hashT);
         return hashRepository.save(hash);
     }
+
     public Hash updateHash(HashDto hashDto, UUID id){
         var hash = findById(id);
         BeanUtils.copyProperties(hashDto,hash);
