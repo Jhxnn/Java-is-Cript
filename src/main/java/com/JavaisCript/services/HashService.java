@@ -1,8 +1,8 @@
 package com.JavaisCript.services;
 
 
+import com.JavaisCript.dtos.HashTranslatorDto;
 import com.JavaisCript.models.HashTranslator;
-import com.JavaisCript.repositories.HashRepository;
 import com.JavaisCript.repositories.HashTranslatorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,15 @@ public class HashService {
     HashTranslatorRepository hashTranslatorRepository;
 
 
+    public HashTranslator createHashManually(HashTranslatorDto hashTranslatorDto){
+        HashTranslator hashT = new HashTranslator(hashTranslatorDto.a(),hashTranslatorDto.b(),hashTranslatorDto.c(),
+                hashTranslatorDto.d(),hashTranslatorDto.e(),hashTranslatorDto.f(),hashTranslatorDto.g(),hashTranslatorDto.h(),
+                hashTranslatorDto.i(),hashTranslatorDto.j(), hashTranslatorDto.k(),hashTranslatorDto.l(),hashTranslatorDto.m(),
+                hashTranslatorDto.n(),hashTranslatorDto.o(),hashTranslatorDto.p(),hashTranslatorDto.q(),hashTranslatorDto.r(),
+                hashTranslatorDto.s(),hashTranslatorDto.t(),hashTranslatorDto.u(),hashTranslatorDto.v(),hashTranslatorDto.w(),
+                hashTranslatorDto.x(),hashTranslatorDto.y(),hashTranslatorDto.z(),hashTranslatorDto.key());
+        return hashTranslatorRepository.save(hashT);
+    }
 
     public HashTranslator alphList(String hash){
         List<String> alph = new ArrayList<>(
