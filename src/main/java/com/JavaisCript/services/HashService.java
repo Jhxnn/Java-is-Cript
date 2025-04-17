@@ -6,7 +6,13 @@ import com.JavaisCript.models.HashTranslator;
 import com.JavaisCript.repositories.HashTranslatorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 @Service
@@ -26,7 +32,43 @@ public class HashService {
         return hashTranslatorRepository.save(hashT);
     }
 
-    public HashTranslator alphList(String hash){
+    public byte[] returnFileCript(MultipartFile file, String key) throws IOException {
+        HashTranslator hash = hashTranslatorRepository.findByKey(key);
+        String conteudo = new String(file.getBytes(), StandardCharsets.UTF_8);
+        conteudo.replace("a", hash.getaIs())
+                .replace("b", hash.getbIs())
+                .replace("c", hash.getcIs())
+                .replace("d", hash.getdIs())
+                .replace("e", hash.geteIs())
+                .replace("f", hash.getfIs())
+                .replace("g", hash.getgIs())
+                .replace("h", hash.gethIs())
+                .replace("i", hash.getiIs())
+                .replace("j", hash.getjIs())
+                .replace("k", hash.getkIs())
+                .replace("l", hash.getlIs())
+                .replace("m", hash.getmIs())
+                .replace("n", hash.getnIs())
+                .replace("o", hash.getoIs())
+                .replace("p", hash.getpIs())
+                .replace("q", hash.getqIs())
+                .replace("r", hash.getrIs())
+                .replace("s", hash.getsIs())
+                .replace("t", hash.gettIs())
+                .replace("u", hash.getuIs())
+                .replace("v", hash.getvIs())
+                .replace("w", hash.getwIs())
+                .replace("x", hash.getxIs())
+                .replace("y", hash.getyIs())
+                .replace("z", hash.getzIs());
+
+        Path caminho = Paths.get("criptografado.txt");
+        Files.write(caminho, conteudo.getBytes(StandardCharsets.UTF_8));
+        return Files.readAllBytes(caminho);
+
+    }
+
+    public HashTranslator createHash(String hash){
         List<String> alph = new ArrayList<>(
                 Arrays.asList("a","b","c","d","e","f","g","h","i","j","k",
                         "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"));
